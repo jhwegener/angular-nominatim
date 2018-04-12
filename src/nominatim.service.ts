@@ -26,10 +26,11 @@ export class NominatimService {
     if (polygon_geojson != 0 && polygon_geojson != 1) {
       polygon_geojson = 1;
     }
-    let params = new HttpParams();
-    params.set("q", q);
-    params.set("addressdetails", addressdetails.toString());
-    params.set("polygon_geojson", polygon_geojson.toString());
+    let params = new HttpParams()
+        .set("format", "json")
+        .set("q", q)
+        .set("addressdetails", addressdetails.toString())
+        .set("polygon_geojson", polygon_geojson.toString());
     return this.http.get<GeocodeResponse[]>(NominatimConstant.GEOCODING_ENDPOINT, {
       params: params
     });
@@ -46,11 +47,12 @@ export class NominatimService {
     if (polygon_geojson != 0 && polygon_geojson != 1) {
       polygon_geojson = 1;
     }
-    let params = new HttpParams();
-    params.set("lat", lat.toString());
-    params.set("lon", lon.toString());
-    params.set("addressdetails", addressdetails.toString());
-    params.set("polygon_geojson", polygon_geojson.toString());
+    let params = new HttpParams()
+        .set("format", "json")
+        .set("lat", lat.toString())
+        .set("lon", lon.toString())
+        .set("addressdetails", addressdetails.toString())
+        .set("polygon_geojson", polygon_geojson.toString());
     return this.http.get<ReverseGeocodeResponse>(NominatimConstant.REVERSE_GEOCODING_ENDPOINT, {
       params: params
     });
