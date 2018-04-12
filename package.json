@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "tsc",
     "build": "tsc",
-    "postinstall": "postinstall-build"
+    "postinstall": "postinstall-build bogus-path"
   },
   "keywords": [
     "angular4",
