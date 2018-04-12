@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "tsc",
-    "build": "ls -lah && tsc",
-    "postinstall": "postinstall-build bogus-path"
+    "build": "tsc",
+    "postinstall": "postinstall-build ./"
   },
   "keywords": [
     "angular4",
